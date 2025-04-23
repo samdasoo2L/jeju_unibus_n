@@ -1,6 +1,6 @@
 "use client";
 
-import BusLocation from "../components/bus-location";
+import BusLocation from "../bus/components/bus-location";
 import { useBusLocationStore } from "../store/bus";
 import { useDetailTimeStore } from "../store/time";
 

@@ -1,4 +1,4 @@
-import { ATimeLine, BTimeLine } from "../data";
+import { ALocation, ATimeLine, BLocation, BTimeLine } from "../data";
 import { useDetailTimeStore } from "./time";
 
 interface IBusLocation {
@@ -52,7 +52,7 @@ export const useBusLocationStore = (): IBusLocation => {
       anow = `금일 운영 종료되었습니다.`;
       anext = "";
     } else if (loSecond - aNowStartTime < 12) {
-      anow = `현재 ${ATimeLine[loSecond - aNowStartTime]}을 지나고 있습니다.`;
+      anow = `현재 ${ALocation[loSecond - aNowStartTime]}을 지나고 있습니다.`;
       anext = `${aNextStartTime - loSecond}`;
     } else {
       anow = `${aNextStartTime - loSecond}분 후 출발합니다.`;
@@ -65,8 +65,8 @@ export const useBusLocationStore = (): IBusLocation => {
       bnow = `금일 운영 종료되었습니다.`;
       bnext = "";
     } else if (loSecond - bNowStartTime < 12) {
-      bnow = `현재 ${BTimeLine[loSecond - bNowStartTime]}을 지나고 있습니다.`;
-      bnext = `${bNextStartTime - loSecond}`;
+      bnow = `현재 ${BLocation[loSecond - bNowStartTime]}을 지나고 있습니다.`;
+      bnext = `${bNextStartTime != 1200 ? bNextStartTime - loSecond : ""}`;
     } else {
       bnow = `${bNextStartTime - loSecond}분 후 출발합니다.`;
       bnext = "";

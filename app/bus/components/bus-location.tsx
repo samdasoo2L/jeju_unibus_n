@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ALocation, BLocation } from "../data";
+import { ALocation, BLocation } from "../../data";
 
 interface IBusLocation {
   type: string;

@@ -7,6 +7,10 @@ export const BTimeLine = [
   950, 980, 1010, 1050, 1070, 1090, 1110, 1130, 1200,
 ];
 
+export const VTimeLine = [
+  520, 535, 580, 640, 655, 720, 765, 775, 820, 940, 955, 1020, 1200,
+];
+
 export const ALocation = [
   "정문",
   "약학대학",
