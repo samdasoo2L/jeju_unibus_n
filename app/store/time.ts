@@ -30,3 +30,23 @@ export const useDetailTimeStore = (): DetailTime => {
     loSecond: currentTime.getHours() * 60 + currentTime.getMinutes(),
   };
 };
+
+interface DayState {
+  date: Date;
+  setNextDay: () => void;
+  setPrevDay: () => void;
+}
+
+export const useDayStore = create<DayState>((set) => ({
+  date: new Date(),
+
+  setNextDay: () =>
+    set((state) => ({
+      date: new Date(state.date.getTime() + 24 * 60 * 60 * 1000),
+    })),
+
+  setPrevDay: () =>
+    set((state) => ({
+      date: new Date(state.date.getTime() - 24 * 60 * 60 * 1000),
+    })),
+}));

@@ -1,6 +1,7 @@
 "use client";
 
 import BusLocation from "../bus/components/bus-location";
+import Title from "../components/title";
 import { useBusLocationStore } from "../store/bus";
 import { useDetailTimeStore } from "../store/time";
 
@@ -13,10 +14,11 @@ export default function Home() {
       <div>
         🕒 {hour}시 {minute}분 {second}초 {day}
       </div>
-      <div>BUS</div>
+      <Title name="BUS" />
       <BusLocation type="A" location={nowALocation} next={nextA} />
       <BusLocation type="B" location={nowBLocation} next={nextB} />
-      <div>FOOD</div>
+      <Title name="FOOD" />
+      <div>🙄</div>
     </div>
   );
 }
